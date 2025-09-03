@@ -1,0 +1,17 @@
+kafka:
+    image: bitnami/kafka:latest
+    networks:
+     - my-network
+    container_name: zfkafka
+    environment:
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://0.0.0.0:9092,SSL://0.0.0.0:8087
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://zfkafka:9092,SSL://10.20.97.35:8087
+      - ALLOW_CFG_PLAINTEXT_LISTENER=yes
+      - KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,SSL:SSL
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zfzookeeper:2181
+      - KAFKA_CFG_SSL_KEYSTORE_LOCATION=/bitnami/kafka/config/certs/kafka.keystore.jks
+      - KAFKA_CFG_SSL_KEYSTORE_PASSWORD=123ABCdef*
+      - KAFKA_CFG_SSL_KEY_PASSWORD=123ABCdef*
+      - KAFKA_CFG_SSL_TRUSTSTORE_LOCATION=/bitnami/kafka/config/certs/kafka.truststore.jks
+      - KAFKA_CFG_SSL_TRUSTSTORE_PASSWORD=123ABCdef*

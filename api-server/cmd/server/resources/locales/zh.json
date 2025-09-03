@@ -1,0 +1,18 @@
+{
+  "PARAM.REQUIRED": "参数{{ .name }}不能为空",
+  "PARAM.INVALID.PARAM": "无效的参数: {{ .name }}",
+  "PARAM.INVALID.SCHEME": "参数错误, 未知的资源类型 {{ .kind}}",
+  "PARAM.NOT.LIST": "参数错误, 无法转化为List类型",
+  "PARAM.INVALID.JSON": "参数错误, 无效的JSON数据",
+  "PARAM.INVALID.DATA": "无效的数据格式",
+
+  "VALIDATION.VALUE.RANGE": "值必须在{{ .start }}至{{ .end }}范围内",
+
+
+  "ERROR.INTERNAL": "内部异常: {{ .error }}",
+  "ERROR.BACKINGIMAGE.CREATED.FAILED": "后端镜像创建失败，请删除该镜像后再试",
+
+
+  "PARAM.VALIDATION.FAILED": "参数校验失败"
+
+}

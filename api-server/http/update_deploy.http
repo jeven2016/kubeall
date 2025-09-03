@@ -1,0 +1,629 @@
+### Get json data
+GET localhost:8080/api/v1/namespaces/default/deployments/nginx
+Content-Type: application/json
+
+
+### update deployment
+PUT localhost:8080/api/v1/namespaces/default/deployments/nginx
+Content-Type: application/yaml
+
+{
+  "kind": "Deployment",
+  "apiVersion": "apps/v1",
+  "metadata": {
+    "name": "nginx",
+    "namespace": "default",
+    "uid": "e2b97a38-f30f-488b-a343-3ba1af2f2e80",
+    "resourceVersion": "28888819",
+    "generation": 1,
+    "creationTimestamp": "2025-06-22T03:16:11Z",
+    "labels": {
+      "app.kubernetes.io/instance": "nginx",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "nginx",
+      "app.kubernetes.io/version": "1.27.4",
+      "helm.sh/chart": "nginx-19.0.3"
+    },
+    "annotations": {
+      "deployment.kubernetes.io/revision": "1",
+      "meta.helm.sh/release-name": "nginx",
+      "meta.helm.sh/release-namespace": "default"
+    },
+    "managedFields": [
+      {
+        "manager": "helm",
+        "operation": "Update",
+        "apiVersion": "apps/v1",
+        "time": "2025-06-22T03:16:11Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:metadata": {
+            "f:annotations": {
+              ".": {},
+              "f:meta.helm.sh/release-name": {},
+              "f:meta.helm.sh/release-namespace": {}
+            },
+            "f:labels": {
+              ".": {},
+              "f:app.kubernetes.io/instance": {},
+              "f:app.kubernetes.io/managed-by": {},
+              "f:app.kubernetes.io/name": {},
+              "f:app.kubernetes.io/version": {},
+              "f:helm.sh/chart": {}
+            }
+          },
+          "f:spec": {
+            "f:progressDeadlineSeconds": {},
+            "f:replicas": {},
+            "f:revisionHistoryLimit": {},
+            "f:selector": {},
+            "f:strategy": {
+              "f:rollingUpdate": {
+                ".": {},
+                "f:maxSurge": {},
+                "f:maxUnavailable": {}
+              },
+              "f:type": {}
+            },
+            "f:template": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:app.kubernetes.io/instance": {},
+                  "f:app.kubernetes.io/managed-by": {},
+                  "f:app.kubernetes.io/name": {},
+                  "f:app.kubernetes.io/version": {},
+                  "f:helm.sh/chart": {}
+                }
+              },
+              "f:spec": {
+                "f:affinity": {
+                  ".": {},
+                  "f:podAntiAffinity": {
+                    ".": {},
+                    "f:preferredDuringSchedulingIgnoredDuringExecution": {}
+                  }
+                },
+                "f:automountServiceAccountToken": {},
+                "f:containers": {
+                  "k:{\"name\":\"nginx\"}": {
+                    ".": {},
+                    "f:env": {
+                      ".": {},
+                      "k:{\"name\":\"BITNAMI_DEBUG\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      },
+                      "k:{\"name\":\"NGINX_HTTPS_PORT_NUMBER\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      },
+                      "k:{\"name\":\"NGINX_HTTP_PORT_NUMBER\"}": {
+                        ".": {},
+                        "f:name": {},
+                        "f:value": {}
+                      }
+                    },
+                    "f:image": {},
+                    "f:imagePullPolicy": {},
+                    "f:livenessProbe": {
+                      ".": {},
+                      "f:failureThreshold": {},
+                      "f:initialDelaySeconds": {},
+                      "f:periodSeconds": {},
+                      "f:successThreshold": {},
+                      "f:tcpSocket": {
+                        ".": {},
+                        "f:port": {}
+                      },
+                      "f:timeoutSeconds": {}
+                    },
+                    "f:name": {},
+                    "f:ports": {
+                      ".": {},
+                      "k:{\"containerPort\":8080,\"protocol\":\"TCP\"}": {
+                        ".": {},
+                        "f:containerPort": {},
+                        "f:name": {},
+                        "f:protocol": {}
+                      },
+                      "k:{\"containerPort\":8443,\"protocol\":\"TCP\"}": {
+                        ".": {},
+                        "f:containerPort": {},
+                        "f:name": {},
+                        "f:protocol": {}
+                      }
+                    },
+                    "f:readinessProbe": {
+                      ".": {},
+                      "f:failureThreshold": {},
+                      "f:httpGet": {
+                        ".": {},
+                        "f:path": {},
+                        "f:port": {},
+                        "f:scheme": {}
+                      },
+                      "f:initialDelaySeconds": {},
+                      "f:periodSeconds": {},
+                      "f:successThreshold": {},
+                      "f:timeoutSeconds": {}
+                    },
+                    "f:resources": {
+                      ".": {},
+                      "f:limits": {
+                        ".": {},
+                        "f:cpu": {},
+                        "f:ephemeral-storage": {},
+                        "f:memory": {}
+                      },
+                      "f:requests": {
+                        ".": {},
+                        "f:cpu": {},
+                        "f:ephemeral-storage": {},
+                        "f:memory": {}
+                      }
+                    },
+                    "f:securityContext": {
+                      ".": {},
+                      "f:allowPrivilegeEscalation": {},
+                      "f:capabilities": {
+                        ".": {},
+                        "f:drop": {}
+                      },
+                      "f:privileged": {},
+                      "f:readOnlyRootFilesystem": {},
+                      "f:runAsGroup": {},
+                      "f:runAsNonRoot": {},
+                      "f:runAsUser": {},
+                      "f:seLinuxOptions": {},
+                      "f:seccompProfile": {
+                        ".": {},
+                        "f:type": {}
+                      }
+                    },
+                    "f:terminationMessagePath": {},
+                    "f:terminationMessagePolicy": {},
+                    "f:volumeMounts": {
+                      ".": {},
+                      "k:{\"mountPath\":\"/certs\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {}
+                      },
+                      "k:{\"mountPath\":\"/opt/bitnami/nginx/conf\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {},
+                        "f:subPath": {}
+                      },
+                      "k:{\"mountPath\":\"/opt/bitnami/nginx/logs\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {},
+                        "f:subPath": {}
+                      },
+                      "k:{\"mountPath\":\"/opt/bitnami/nginx/tmp\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {},
+                        "f:subPath": {}
+                      },
+                      "k:{\"mountPath\":\"/tmp\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {},
+                        "f:subPath": {}
+                      }
+                    }
+                  }
+                },
+                "f:dnsPolicy": {},
+                "f:initContainers": {
+                  ".": {},
+                  "k:{\"name\":\"preserve-logs-symlinks\"}": {
+                    ".": {},
+                    "f:args": {},
+                    "f:command": {},
+                    "f:image": {},
+                    "f:imagePullPolicy": {},
+                    "f:name": {},
+                    "f:resources": {
+                      ".": {},
+                      "f:limits": {
+                        ".": {},
+                        "f:cpu": {},
+                        "f:ephemeral-storage": {},
+                        "f:memory": {}
+                      },
+                      "f:requests": {
+                        ".": {},
+                        "f:cpu": {},
+                        "f:ephemeral-storage": {},
+                        "f:memory": {}
+                      }
+                    },
+                    "f:securityContext": {
+                      ".": {},
+                      "f:allowPrivilegeEscalation": {},
+                      "f:capabilities": {
+                        ".": {},
+                        "f:drop": {}
+                      },
+                      "f:privileged": {},
+                      "f:readOnlyRootFilesystem": {},
+                      "f:runAsGroup": {},
+                      "f:runAsNonRoot": {},
+                      "f:runAsUser": {},
+                      "f:seLinuxOptions": {},
+                      "f:seccompProfile": {
+                        ".": {},
+                        "f:type": {}
+                      }
+                    },
+                    "f:terminationMessagePath": {},
+                    "f:terminationMessagePolicy": {},
+                    "f:volumeMounts": {
+                      ".": {},
+                      "k:{\"mountPath\":\"/emptydir\"}": {
+                        ".": {},
+                        "f:mountPath": {},
+                        "f:name": {}
+                      }
+                    }
+                  }
+                },
+                "f:restartPolicy": {},
+                "f:schedulerName": {},
+                "f:securityContext": {
+                  ".": {},
+                  "f:fsGroup": {},
+                  "f:fsGroupChangePolicy": {}
+                },
+                "f:serviceAccount": {},
+                "f:serviceAccountName": {},
+                "f:shareProcessNamespace": {},
+                "f:terminationGracePeriodSeconds": {},
+                "f:volumes": {
+                  ".": {},
+                  "k:{\"name\":\"certificate\"}": {
+                    ".": {},
+                    "f:name": {},
+                    "f:secret": {
+                      ".": {},
+                      "f:defaultMode": {},
+                      "f:items": {},
+                      "f:secretName": {}
+                    }
+                  },
+                  "k:{\"name\":\"empty-dir\"}": {
+                    ".": {},
+                    "f:emptyDir": {},
+                    "f:name": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "manager": "kube-controller-manager",
+        "operation": "Update",
+        "apiVersion": "apps/v1",
+        "time": "2025-06-22T03:16:32Z",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:metadata": {
+            "f:annotations": {
+              "f:deployment.kubernetes.io/revision": {}
+            }
+          },
+          "f:status": {
+            "f:availableReplicas": {},
+            "f:conditions": {
+              ".": {},
+              "k:{\"type\":\"Available\"}": {
+                ".": {},
+                "f:lastTransitionTime": {},
+                "f:lastUpdateTime": {},
+                "f:message": {},
+                "f:reason": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"Progressing\"}": {
+                ".": {},
+                "f:lastTransitionTime": {},
+                "f:lastUpdateTime": {},
+                "f:message": {},
+                "f:reason": {},
+                "f:status": {},
+                "f:type": {}
+              }
+            },
+            "f:observedGeneration": {},
+            "f:readyReplicas": {},
+            "f:replicas": {},
+            "f:updatedReplicas": {}
+          }
+        },
+        "subresource": "status"
+      }
+    ]
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app.kubernetes.io/instance": "nginx",
+        "app.kubernetes.io/name": "nginx"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app.kubernetes.io/instance": "nginx",
+          "app.kubernetes.io/managed-by": "Helm",
+          "app.kubernetes.io/name": "nginx",
+          "app.kubernetes.io/version": "1.27.4",
+          "helm.sh/chart": "nginx-19.0.3"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "empty-dir",
+            "emptyDir": {}
+          },
+          {
+            "name": "certificate",
+            "secret": {
+              "secretName": "nginx-tls",
+              "items": [
+                {
+                  "key": "tls.crt",
+                  "path": "server.crt"
+                },
+                {
+                  "key": "tls.key",
+                  "path": "server.key"
+                }
+              ],
+              "defaultMode": 420
+            }
+          }
+        ],
+        "initContainers": [
+          {
+            "name": "preserve-logs-symlinks",
+            "image": "docker.io/bitnami/nginx:1.27.4-debian-12-r6",
+            "command": [
+              "/bin/bash"
+            ],
+            "args": [
+              "-ec",
+              "#!/bin/bash\n. /opt/bitnami/scripts/libfs.sh\n# We copy the logs folder because it has symlinks to stdout and stderr\nif ! is_dir_empty /opt/bitnami/nginx/logs; then\n  cp -r /opt/bitnami/nginx/logs /emptydir/app-logs-dir\nfi\n"
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "150m",
+                "ephemeral-storage": "2Gi",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "ephemeral-storage": "50Mi",
+                "memory": "128Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "empty-dir",
+                "mountPath": "/emptydir"
+              }
+            ],
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "IfNotPresent",
+            "securityContext": {
+              "capabilities": {
+                "drop": [
+                  "ALL"
+                ]
+              },
+              "privileged": false,
+              "seLinuxOptions": {},
+              "runAsUser": 1001,
+              "runAsGroup": 1001,
+              "runAsNonRoot": true,
+              "readOnlyRootFilesystem": true,
+              "allowPrivilegeEscalation": false,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "nginx",
+            "image": "docker.io/bitnami/nginx:1.27.4-debian-12-r6",
+            "ports": [
+              {
+                "name": "http",
+                "containerPort": 8080,
+                "protocol": "TCP"
+              },
+              {
+                "name": "https",
+                "containerPort": 8443,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "BITNAMI_DEBUG",
+                "value": "false"
+              },
+              {
+                "name": "NGINX_HTTP_PORT_NUMBER",
+                "value": "8080"
+              },
+              {
+                "name": "NGINX_HTTPS_PORT_NUMBER",
+                "value": "8443"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "150m",
+                "ephemeral-storage": "2Gi",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "ephemeral-storage": "50Mi",
+                "memory": "128Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "name": "empty-dir",
+                "mountPath": "/tmp",
+                "subPath": "tmp-dir"
+              },
+              {
+                "name": "empty-dir",
+                "mountPath": "/opt/bitnami/nginx/conf",
+                "subPath": "app-conf-dir"
+              },
+              {
+                "name": "empty-dir",
+                "mountPath": "/opt/bitnami/nginx/logs",
+                "subPath": "app-logs-dir"
+              },
+              {
+                "name": "empty-dir",
+                "mountPath": "/opt/bitnami/nginx/tmp",
+                "subPath": "app-tmp-dir"
+              },
+              {
+                "name": "certificate",
+                "mountPath": "/certs"
+              }
+            ],
+            "livenessProbe": {
+              "tcpSocket": {
+                "port": "http"
+              },
+              "initialDelaySeconds": 30,
+              "timeoutSeconds": 5,
+              "periodSeconds": 10,
+              "successThreshold": 1,
+              "failureThreshold": 6
+            },
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 5,
+              "timeoutSeconds": 3,
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "failureThreshold": 3
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "imagePullPolicy": "IfNotPresent",
+            "securityContext": {
+              "capabilities": {
+                "drop": [
+                  "ALL"
+                ]
+              },
+              "privileged": false,
+              "seLinuxOptions": {},
+              "runAsUser": 1001,
+              "runAsGroup": 1001,
+              "runAsNonRoot": true,
+              "readOnlyRootFilesystem": true,
+              "allowPrivilegeEscalation": false,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            }
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "nginx",
+        "serviceAccount": "nginx",
+        "automountServiceAccountToken": false,
+        "shareProcessNamespace": false,
+        "securityContext": {
+          "fsGroup": 1001,
+          "fsGroupChangePolicy": "Always"
+        },
+        "affinity": {
+          "podAntiAffinity": {
+            "preferredDuringSchedulingIgnoredDuringExecution": [
+              {
+                "weight": 1,
+                "podAffinityTerm": {
+                  "labelSelector": {
+                    "matchLabels": {
+                      "app.kubernetes.io/instance": "nginx",
+                      "app.kubernetes.io/name": "nginx"
+                    }
+                  },
+                  "topologyKey": "kubernetes.io/hostname"
+                }
+              }
+            ]
+          }
+        },
+        "schedulerName": "default-scheduler"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": "25%",
+        "maxSurge": "25%"
+      }
+    },
+    "revisionHistoryLimit": 10,
+    "progressDeadlineSeconds": 600
+  },
+  "status": {
+    "observedGeneration": 1,
+    "replicas": 1,
+    "updatedReplicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "conditions": [
+      {
+        "type": "Available",
+        "status": "True",
+        "lastUpdateTime": "2025-06-22T03:16:32Z",
+        "lastTransitionTime": "2025-06-22T03:16:32Z",
+        "reason": "MinimumReplicasAvailable",
+        "message": "Deployment has minimum availability."
+      },
+      {
+        "type": "Progressing",
+        "status": "True",
+        "lastUpdateTime": "2025-06-22T03:16:32Z",
+        "lastTransitionTime": "2025-06-22T03:16:11Z",
+        "reason": "NewReplicaSetAvailable",
+        "message": "ReplicaSet \"nginx-6bccf9f999\" has successfully progressed."
+      }
+    ]
+  }
+}

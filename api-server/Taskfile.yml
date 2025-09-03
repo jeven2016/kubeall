@@ -1,0 +1,27 @@
+version: '3'
+
+tasks:
+  init:
+    desc: initialize environment
+    cmds:
+      - go clean -modcache
+      - go mod tidy
+
+  docs:
+    desc: generate documents
+    cmds:
+      # 每次执行都要确保GOPATH正常，且接口变动后，执行swag init
+      - echo $GOPATH
+      - swag init -g cmd/server/main.go -o ./docs --parseDependency --parseInternal --parseDepth 3
+
+  build:
+    desc: build a executable file
+    deps:
+      - clean
+    cmds:
+      - CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -ldflags="-s -w" -o bin/kubeall-api-server  cmd/server/main.go
+
+
+  clean:
+    cmds:
+      - rm -rf bin/auth-*

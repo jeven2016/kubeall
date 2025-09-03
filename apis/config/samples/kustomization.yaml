@@ -1,0 +1,5 @@
+## Append samples of your project ##
+resources:
+- api_v1_image.yaml
+- api_v1_globalsettings.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

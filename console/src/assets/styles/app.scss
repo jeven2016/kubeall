@@ -1,0 +1,377 @@
+$default-box-shadow: rgb(0 0 0 / 10%) 0rem 0.25rem 0.375rem -0.0625rem, rgb(0 0 0 / 6%) 0rem 0.125rem 0.25rem -0.0625rem;
+$header-line-height: 4rem;
+$header-line-height: 4rem;
+$normal-line-height: 3rem;
+$content-padding: 0.5rem 1rem;
+
+$primary-color: rgba(25, 25, 25, 0.9);
+
+$panel-bg: linear-gradient(125deg, rgba(66, 66, 74, 0.7), rgba(25, 25, 25, 0.4));
+
+$solid-panel-bg: #292929;
+
+html {
+  font-size: 14px!important;
+  background: #121212!important;
+}
+
+
+body {
+  font: 1rem/1.5 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
+  Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+
+  .customer-panel {
+    + .card {
+      margin-top: 1rem;
+    }
+  }
+
+  .content-header {
+    display: flex;
+    flex: 1 1 100%;
+
+    > .breadcrumb {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+
+.c-container {
+  color: #fff;
+  background: url('../images/desktop.jpg') center center no-repeat;
+}
+
+.c-login-container {
+  height: 100vh;
+
+  > .c-back {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+  }
+
+  > .c-login-row {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    align-items: stretch;
+
+    .c-login-col {
+      padding: 0 3rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: $default-box-shadow;
+      background: rgba(0, 0, 0, .7);
+
+      .input {
+        color: rgba(255, 255, 255, 1);
+      }
+
+      .c-login-info {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+
+        .icon {
+          font-size: 2rem !important;
+        }
+      }
+
+      form {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.login-form {
+  > .form-item + .form-item {
+    margin-top: 1rem;
+  }
+}
+
+
+.site-icon {
+  color: rgb(73, 184, 71);
+  animation: rotation infinite 5s linear;
+}
+
+.c-navbar-header {
+  line-height: $header-line-height;
+  border: none !important;
+  //border-radius: 0.5rem;
+  //box-shadow: rgb(255 255 255 / 90%) 0 0 0.0625rem 0.0625rem inset,
+  //rgb(0 0 0 / 5%) 0 1.25rem 1.6875rem 0;
+}
+
+.c-breadcrumb-line {
+  min-height: $normal-line-height;
+  display: flex;
+  align-items: center;
+  box-shadow: $default-box-shadow;
+  padding: $content-padding;
+
+  .breadcrumb {
+    margin: 0;
+
+    + h2 {
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+.c-content-area {
+  display: block;
+  margin: 1.5rem;
+
+  > .content-info {
+    width: 60%;
+  }
+}
+
+.c-content-inner {
+}
+
+.c-pagination-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.white-panel {
+  //background: #fff;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.c-affix {
+  .affix-fixed {
+  }
+}
+
+.c-article-title {
+  &:hover,
+  &:focus {
+    color: $primary-color;
+    outline: none;
+  }
+}
+
+.c-slider {
+  color: #fff;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  top: 0;
+  //   padding: 1rem;
+  z-index: 100;
+
+  .c-slider-catalog {
+    width: 60px;
+    background: $panel-bg;
+    border-right: 1px dashed #555d63;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .wui-button {
+      width: 90% !important;
+      height: 3rem !important;
+      margin: .5rem !important;
+
+    }
+  }
+
+  .c-slider-content {
+    width: 240px;
+    height: 100%;
+    //     background: url('../images/bg2.jpg') 40% 20% content-box;
+    box-shadow: rgb(0 0 0 / 5%) 0 1.25rem 1.6875rem 0;
+    position: relative;
+    overflow: hidden;
+
+    > .c-slider-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(195deg, rgba(66, 66, 74, 0.9), rgba(25, 25, 25, 0.9));
+    }
+
+    .menu-item {
+      font-size: 1rem;
+      font-weight: 400;
+      border-radius: 0.25rem;
+      color: #fff;
+      text-shadow: none;
+      margin: 0 .5rem;
+      padding: 1.5rem 1rem;
+      //       transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      //       background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+      &::after {
+        display: none !important;
+      }
+
+      &:hover {
+        color: rgb(200, 128, 234) !important;
+      }
+
+      &.active {
+        background: linear-gradient(195deg, rgb(184, 83, 232), rgb(95, 23, 129));
+        color: #fff !important;
+        box-shadow: rgb(0 0 0 / 10%) 0 0.25rem 0.375rem -0.0625rem,
+        rgb(0 0 0 / 6%) 0rem 0.125rem 0.25rem -0.0625rem;
+      }
+    }
+
+    .slider-title {
+      padding: 1.5rem 0 0;
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      height: $header-line-height;
+      color: #fff;
+    }
+  }
+}
+
+.base-layout {
+  //padding: 1rem;
+  height: 100%;
+  background: transparent;
+
+  .c-layout-inner {
+
+  }
+}
+
+.c-content-header {
+  //background: linear-gradient(195deg, rgba(73, 163, 241, 0.6), rgba(26, 115, 232, 0.6)) 60%  center / cover, url("../images/wm1.jpg") transparent;
+  background: linear-gradient(195deg, rgba(100, 51, 154, 0.3), rgba(58, 26, 108, 0.6)) 60% center /
+      cover,
+  url('../images/bg2.png') center 45% no-repeat;
+  background-size: cover;
+  min-height: 8rem;
+  border-radius: 0.75rem;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: $default-box-shadow;
+
+  .c-header-panel {
+    color: #fff;
+    text-shadow: 2px 2px 4px #ccc;
+    font-size: 2rem;
+    padding: 1.5rem;
+
+    > .c-header-desc {
+      margin-top: .5rem;
+      font-size: 1.25rem;
+      text-shadow: 2px 2px 4px $primary-color;
+      color: #ccc
+    }
+  }
+}
+
+.layout,
+.layout-content {
+  background: transparent;
+}
+
+.c-content-body {
+  overflow: visible;
+  position: relative;
+  margin-top: 1.5rem;
+  //min-height: 200px;
+  background: $solid-panel-bg;
+  box-shadow: $default-box-shadow;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  .c-book-chanel {
+    color: rgba(245, 128, 62);
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .c-book-chanel-list {
+    margin-top: 1rem;
+
+    .c-table-content{
+      min-height: 20rem;
+    }
+  }
+}
+
+.c-catalog-flag {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.25rem;
+  background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+  margin-top: -1.75rem;
+  margin-left: -1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-catalog-panel {
+  margin-top: 2rem;
+}
+
+.c-catalog-name {
+  color: #0ca0ff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: #ccc;
+}
+
+.c-catalog-background {
+  background: #fff url('../images/corner-1.png') center center no-repeat;
+}
+
+.c-catalog-background-2 {
+  background: #fff url('../images/corner-2.png') center center no-repeat;
+}
+
+.c-catalog-desc {
+  height: 4.5rem;
+}
+
+.c-list-avatar {
+  background: linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232));
+}
+
+
+//--------------------------------New-----------------
+.custom-icon {
+  font-size: 24px;
+  color: #cccccc;
+}
+.os-icon{
+    color: #fff;
+}

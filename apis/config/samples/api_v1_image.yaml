@@ -1,0 +1,13 @@
+apiVersion: api.kubeall.io/v1
+kind: Image
+metadata:
+  labels:
+    app.kubernetes.io/name: apis
+    app.kubernetes.io/managed-by: kustomize
+  name: windows10
+spec:
+  imageFrom: "upload"
+  osType: "windows"
+  osVersion: "20H2"
+  imageType: "iso"
+  backend: "backingimage"

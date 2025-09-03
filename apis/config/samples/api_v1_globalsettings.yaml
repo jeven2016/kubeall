@@ -1,0 +1,14 @@
+apiVersion: api.kubeall.io/v1
+kind: GlobalSettings
+metadata:
+  labels:
+    app.kubernetes.io/name: apis
+    app.kubernetes.io/managed-by: kustomize
+  name: globalsettings-sample
+spec:
+  osTypes:
+    - Windows
+    - Ubuntu
+    - CentOS
+    - Linux
+  

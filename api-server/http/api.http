@@ -1,0 +1,56 @@
+### List
+GET localhost:8080/api/v1/namespaces/longhorn-system/images?sortBy=creationTimestamp&sortOrder=asc
+
+### Get vms
+### Get pod
+GET localhost:8080/api/v1/namespaces/all/vms
+
+### Get ippools
+GET localhost:8080/api/v1/namespaces/all/pools
+
+### cluster List
+GET localhost:8080/api/v1/clusters/clusterroles
+
+### namespace vm
+GET localhost:8080/api/v1/clusters/namespaces/vm
+
+### Get pod
+GET localhost:8080/api/v1/namespaces/apps/pods/xunlei-69696d569-xr8qd
+
+### Delete pod
+DELETE localhost:8080/api/v1/namespaces/longhorn-system/images/windows10-2
+
+### namespace vm
+GET localhost:8080/api/v1/namespaces/all/images?type=iso
+
+### Post Image
+POST localhost:8080/api/v1/namespaces/longhorn-system/images
+Content-Type: application/json
+
+{
+      "kind": "Image",
+      "apiVersion": "api.kubeall.io/v1",
+      "metadata": {
+        "name": "windows10-3",
+        "namespace": "longhorn-system",
+
+        "labels": {
+          "app.kubernetes.io/managed-by": "kustomize",
+          "app.kubernetes.io/name": "apis"
+        }
+      },
+      "spec": {
+        "osType": "windows",
+        "osVersion": "20H2",
+        "imageType": "iso",
+        "backend": "backingimage",
+        "imageFrom": "upload",
+        "storageClassParameters": null
+      }
+}
+
+### Upload Image
+POST localhost:8080/api/v1/namespaces/longhorn-system/images//upload
+
+### list global settings
+GET localhost:8080/api/v1/clusters/globalsettings
